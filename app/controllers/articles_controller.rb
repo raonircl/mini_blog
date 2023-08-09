@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   def new 
     @article = Article.new
   end
-  
+
   def create 
     @article = Article.new(title: "...", boby: "....")
 
@@ -20,4 +20,9 @@ class ArticlesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  private
+    def article_params
+      params.require(:article).permit(:title, :boby)
+    end
 end
