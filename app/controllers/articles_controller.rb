@@ -39,6 +39,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
 
+    puts "Article destroyed!"
+
     redirect_to root_path, status: :see_other
   end
 
