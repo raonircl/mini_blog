@@ -18,16 +18,16 @@
   <% @article.comments.each do |comment| %>
     <p>
       <strong>Commenter:</strong>
-      <%= comment.body %>
+      <%= comment.commenter %>
     </p>
     <p>
       <strong>comment:</strong>
-      <%= comment.body %>
+      <%= comment.body%>
     </p>
   <%end%>
 
 <h2>Add a comment:</h2>
-  <%= form_with model: [@article, @article.comments.build] do form %>
+  <%= form_with model: [@article, @article.comments.build] do |form| %>
     <p>
       <%= form.label :commenter %><br>
       <%= form.text_field :commenter %>
@@ -39,4 +39,4 @@
     <p>
       <%= form.submit %>
     </p>
-  <%end%> 
+  <%end%>
